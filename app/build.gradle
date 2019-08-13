@@ -29,10 +29,14 @@ dependencies {
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.core:core-ktx:1.0.2'
-    implementation 'com.github.urbancompass:snail-kotlin:0.0.12'
+    implementation 'com.github.urbancompass:snail-kotlin:0.1.0'
     implementation 'com.squareup.okhttp3:okhttp:3.14.1'
     implementation 'com.google.code.gson:gson:2.8.5'
+
     implementation 'org.jetbrains.anko:anko:0.10.8'
+    implementation 'org.jetbrains.anko:anko-recyclerview-v7:0.10.8'
+    implementation 'org.jetbrains.anko:anko-constraint-layout:0.10.8'
+    implementation 'org.jetbrains.anko:anko-design:0.10.8'
 
     testImplementation 'junit:junit:4.12'
 }
