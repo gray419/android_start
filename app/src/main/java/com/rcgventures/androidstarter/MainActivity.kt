@@ -1,10 +1,12 @@
 package com.rcgventures.androidstarter
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import com.google.gson.Gson
+import androidx.appcompat.app.AppCompatActivity
+import kotlinx.serialization.Mapper
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonConfiguration
 import okhttp3.*
 import org.jetbrains.anko.*
 import java.io.IOException
@@ -41,8 +43,9 @@ class MainActivity : AppCompatActivity() {
 
             override fun onResponse(call: Call, response: Response) {
                 val jsonResponse = response.body()?.string() ?: ""
-                val movieResponse = Gson().fromJson(jsonResponse, MovieResponse::class.java)
-                movieResponse?.movies?.forEach {
+                val json = Json(JsonConfiguration.Stable)
+                val movieResponse = json.parse(MovieResponse.serializer(), jsonResponse)
+                movieResponse.movies?.forEach {
                     Log.i("MainActivity", "${it.name} - ${it.rating ?: 0.0}")
                 }
             }

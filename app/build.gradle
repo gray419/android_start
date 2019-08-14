@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlinx-serialization'
 
 android {
     compileSdkVersion 29
@@ -26,17 +27,19 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.11.1"
+
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.core:core-ktx:1.0.2'
     implementation 'com.github.urbancompass:snail-kotlin:0.1.0'
     implementation 'com.squareup.okhttp3:okhttp:3.14.1'
-    implementation 'com.google.code.gson:gson:2.8.5'
 
     implementation 'org.jetbrains.anko:anko:0.10.8'
     implementation 'org.jetbrains.anko:anko-recyclerview-v7:0.10.8'
     implementation 'org.jetbrains.anko:anko-constraint-layout:0.10.8'
     implementation 'org.jetbrains.anko:anko-design:0.10.8'
+
 
     testImplementation 'junit:junit:4.12'
 }

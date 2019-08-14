@@ -1,3 +1,6 @@
 package com.rcgventures.androidstarter
 
-class MovieResponse(val movies: List<Movie>?)
+import kotlinx.serialization.Serializable
+
+@Serializable
+class MovieResponse(val movies: List<Movie>? = null)
